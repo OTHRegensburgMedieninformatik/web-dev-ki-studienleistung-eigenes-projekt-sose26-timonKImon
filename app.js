@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("./utils/logger");
 const handlebars = require("express-handlebars");
+const PORT = process.env.PORT || 3000;
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -14,8 +15,8 @@ app.set('views', './views');
 const routes = require("./routes");
 app.use("/", routes);
 
-app.listen(process.env.PORT, () => {
-    console.log(`Web App template listening on ${process.env.PORT}`);
+app.listen(PORT, () => {
+    console.log(`Web App template listening on ${PORT}`);
 });
 
 module.exports = app;
