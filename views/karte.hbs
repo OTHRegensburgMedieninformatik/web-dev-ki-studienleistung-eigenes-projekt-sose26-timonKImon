@@ -4,3 +4,17 @@
     <h3>Drinks & Food</h3>
     <p>Es gibt folgendes:</p>
 </div>
+
+
+	{{#each category}} 
+  	<div class="border p-2 my-2"> 
+    	<h4>{{name}}</h4> 
+        
+    </div> 
+    {{/each}} 
+
+{{#each item}}
+<div class="border p-2 my-2">
+    <h5>{{name}}, {{inhalt}}, {{preis}}</h5>
+</div>
+{{/each}}
