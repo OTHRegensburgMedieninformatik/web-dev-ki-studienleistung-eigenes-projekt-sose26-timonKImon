@@ -6,13 +6,18 @@ const karte = {
         logger.info("Karte rendering");
         const categories = await menulist.getallcategories();
         const items = await menulist.getallitems();
+        const wholeMenu = await menulist.getwholemenu();
+        const sortedMenu = await menulist.sortedMenu();
         const viewData = {
             title: "Karte",
             category: categories,
-            item: items
+            item: items,
+            wholeMenu: wholeMenu,
+            sortedMenu: sortedMenu
         };
         response.render("karte", viewData);
     },
 };
 
 module.exports = karte;
+

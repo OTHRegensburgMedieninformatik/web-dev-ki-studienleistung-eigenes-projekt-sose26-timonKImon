@@ -1,11 +1,12 @@
 const express = require("express");
 const logger = require("./utils/logger");
 const handlebars = require("express-handlebars");
-
+const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
 
-const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
