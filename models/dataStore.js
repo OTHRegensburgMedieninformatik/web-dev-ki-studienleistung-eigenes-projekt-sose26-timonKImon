@@ -8,7 +8,7 @@ const dbConfig = {
 }
 
 if (conString == undefined) {
-    logger.error("ERROR: DB_CON_STRING not set.");
+    logger.error("ERROR: DB_CON_STRING not set.", e);
     process.exit(1);
 }
 

@@ -24,7 +24,7 @@ const menuItems = {
             logger.info("Deleting :", name);
         }
         catch (e) {
-            logger.error("ERROR: couldnt delete item.");
+            logger.error("ERROR: couldnt delete item.", e);
         }
     },
 }

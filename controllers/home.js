@@ -6,7 +6,7 @@ const home = {
     const viewData = {
       title: "Frathouse - Regensburg"
     };
-    response.render("index", viewData);
+    response.render("Startseite", viewData);
   },
 };
 

@@ -10,7 +10,7 @@ const menulist = {
             return result.rows;
         }
         catch (e) {
-            logger.error("ERROR: couldnt get all items.")
+            logger.error("ERROR: couldnt get all items.", e)
         }
     },
     
@@ -21,7 +21,7 @@ const menulist = {
             return result.rows;
         }
         catch (e) {
-            logger.error("ERROR: couldnt get categories.")
+            logger.error("ERROR: couldnt get categories.", e)
         }
     },
 
@@ -32,7 +32,7 @@ const menulist = {
             return result.rows;
         }
         catch (e) {
-            logger.error("ERROR: couldnt get whole menu.")
+            logger.error("ERROR: couldnt get whole menu.", e)
         }
     },
 

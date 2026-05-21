@@ -8,14 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" id="edit" href="/edit">Bearbeiten</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" id="events" href="/events">Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="karte" href="/karte">Karte</a>
         </li>
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" id="karte" href="/edit">Bearbeiten</a>
+        </li>
+        <form action="/logout" method="POST">
+          <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+        {{/if}}
       </ul>
     </div>
   </div>

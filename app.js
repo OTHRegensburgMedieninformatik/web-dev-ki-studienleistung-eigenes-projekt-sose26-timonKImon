@@ -3,10 +3,25 @@ const logger = require("./utils/logger");
 const handlebars = require("express-handlebars");
 const app = express();
 const dotenv = require("dotenv");
+const session = require("express-session");
 dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: "process.env.TC",
+    cookie: {
+        maxAge: 3600000
+    },
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use((request, response, next) => {
+    response.locals.user = request.session.user;
+    next()
+});
 
 app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
