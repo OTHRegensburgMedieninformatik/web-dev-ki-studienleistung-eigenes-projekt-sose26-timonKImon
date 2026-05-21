@@ -40,17 +40,17 @@ const menulist = {
         const sortedMenu = {};
         const Menu = await this.getwholemenu();
 
-        for (const item of Menu) {
-            if (!sortedMenu[item.category]) { //new category 
-                sortedMenu[item.category] = {
-                    name: item.category,
+        for (const element of Menu) {
+            if (!sortedMenu[element.category]) { //new category 
+                sortedMenu[element.category] = {
+                    name: element.category,
                     item: []
                 };
             }
-            sortedMenu[item.category].item.push({
-                item: item.item,
-                preis: item.preis,
-                inhalt: item.inhalt
+            sortedMenu[element.category].item.push({
+                item: element.item,
+                preis: element.preis,
+                inhalt: element.inhalt
             });
         }
         return Object.values(sortedMenu);
