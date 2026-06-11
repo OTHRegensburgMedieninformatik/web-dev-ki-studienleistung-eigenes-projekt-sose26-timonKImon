@@ -1,0 +1,17 @@
+<form action="/reservieren/anfrage" method="POST">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label for="inputName" class="form-label">Name</label>
+            <input placeholder="Ihr Name" type="text" className="form-control" id="inputName" name="name">
+        </div>
+        <div class="mb-3 col-4">
+            <label for="inputInhalt" class="form-label">Anzahl Personen</label>
+            <input placeholder="400" type="text" className="form-control" id="inputInhalt" name="anz.pers">
+        </div>
+        <div class="mb-3 col-4">
+            <label for="inputInhalt" class="form-label">Datum</label>
+            <input placeholder="23.05.2030" type="text" className="form-control" id="inputInhalt" name="datum">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Anfragen</button>
+</form>
