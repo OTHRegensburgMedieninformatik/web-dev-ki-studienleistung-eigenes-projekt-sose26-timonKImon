@@ -1,4 +1,5 @@
 const logger = require("../utils/logger.js");
+const resAnfragen = require("../models/resAnfragen.js");
 
 const reservieren = {
     index(request, response) {
@@ -8,8 +9,26 @@ const reservieren = {
         };
         response.render("reservieren", viewData)
     },
+    
+    async reservierung(request, response) {
+        const newRes = {
+            name: request.body.name,
+            email: request.body.email,
+            anzpers: request.body.anzpers,
+            datum: request.body.datum,
+        };
+    logger.debug("New Reservation :", newRes)
+    await resAnfragen.addRes(newRes);
+    response.redirect("/reservieren");
+    },
+
+    async accRes (request, response) {
+        const id  = request.params.id;
+        await resAnfragen.acceptRes(id);
+        response.redirect("/edit")
+    },
 };
 
-//reservieren.anfrage implementieren
+
 
 module.exports = reservieren;

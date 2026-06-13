@@ -20,7 +20,7 @@ const userHub = {
         const values = [username, passwort];
         try {
             let DBuser = await dataStoreClient.query(query, values);
-            console.log(DBuser);
+            //console.log(DBuser);
             if (DBuser.rows[0] !== undefined) {     //wenn nicht vorhanden = undefinded
                 return {id: username};
                 }

@@ -15,3 +15,36 @@
   </p>
   {{> deleteMenu}}
 </div>
+
+<div class="border p-2 my-2">
+  <h3>Reservierungen annehmen</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Datum</th>
+        <th>Status</th>
+        <th>Aktion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each reservierungen}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.datum}}</td>
+        <td>{{this.status}}</td>
+        <td>
+          {{#if (eq this.status "offen")}}
+        <form action="/reservierung/{{this.id}}/annehmen" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit">Annehmen</button>
+        </form>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+</div>

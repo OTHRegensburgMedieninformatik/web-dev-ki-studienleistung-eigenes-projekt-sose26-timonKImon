@@ -1,11 +1,16 @@
 const logger = require("../utils/logger.js");
 const menuItems = require("../models/menuItems.js");
+//const { reservierung } = require("./reservieren.js");
+const resAnfragen = require("../models/resAnfragen.js");
 
 const edit = {
-  index(request, response) {
+  async index(request, response) {
     logger.info("edit rendering");
+    const reservierung = await resAnfragen.getreservierungen();
+    console.log("in edit:", reservierung);
     const viewData = {
-      title: "Edit Web app template"
+      title: "Edit Web app template",
+      reservierungen: reservierung,
     };
     response.render("edit", viewData);
   },

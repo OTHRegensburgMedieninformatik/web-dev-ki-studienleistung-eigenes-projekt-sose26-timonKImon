@@ -14,7 +14,8 @@ router.get("/events", events.index)
 router.get("/karte", karte.index);
 router.get("/geheimeLoginseitederBar", users.index);
 router.get("/reservieren", reservieren.index);
-//router.get("/reservieren/anfrage", reservieren.anfrage);
+router.post("/reservieren/anfrage", reservieren.reservierung);
+router.post("/reservierung/:id/annehmen", reservieren.accRes);
 router.post("/userHub/111/authentication", users.authenticate);
 router.post("/userHub/111/registrieren", users.register); //registrieren sicherheitslücke, nur login zulassen
 

@@ -23,9 +23,14 @@ app.use((request, response, next) => {
     next()
 });
 
-app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
+app.engine('.hbs', handlebars.engine({extname: '.hbs',     
+    helpers: {
+        eq: (a, b) => a === b
+    }}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
+
+
 
 const routes = require("./routes");
 app.use("/", routes);
