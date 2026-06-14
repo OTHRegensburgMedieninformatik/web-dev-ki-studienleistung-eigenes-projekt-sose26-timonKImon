@@ -1,0 +1,21 @@
+<form class="needs-validation" novalidate action="/reservieren/anfrage" method="POST">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label for="inputName" class="form-label">Name</label>
+            <input placeholder="Ihr Name" type="text" className="form-control" id="inputName" name="name">
+        </div>
+        <div class="mb-3 col-4">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input placeholder="bier@4.de" type="text" className="form-control" id="inputEmail" name="email">
+        </div>
+        <div class="mb-3 col-4">
+            <label for="inputAnzPers" class="form-label">Anzahl Personen</label>
+            <input placeholder="400" type="number" className="form-control" id="inputAnzPers" name="anzpers">
+        </div>
+        <div class="mb-3 col-4">
+            <label for="inputDatum" class="form-label">Datum</label>
+            <input placeholder="23.05.2030" type="date" className="form-control" id="inputDatum" name="datum">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Anfragen</button>
+</form>

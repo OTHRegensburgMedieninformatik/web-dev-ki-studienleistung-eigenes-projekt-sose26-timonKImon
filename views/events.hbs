@@ -1,39 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRATHOUSE REGENSBURG | EVENTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#131313",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed": "#ffdbd0",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-primary-container": "#708ab5",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#465f88",
+                        "secondary": "#ffb59e",
+                        "tertiary": "#00dce5",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "secondary-container": "#ff5717",
+                        "primary-container": "#002147",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#8e9099",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#5e1700",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary": "#143057",
+                        "on-tertiary-container": "#00989e",
+                        "on-secondary-fixed": "#3a0b00",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-container": "#521300",
+                        "surface-tint": "#aec7f6",
+                        "outline-variant": "#44474e",
+                        "on-secondary-fixed-variant": "#842500",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#002628",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#aec7f6",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-tertiary": "#003739",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#c4c6cf",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "stack-sm": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anton"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Anton"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .sticker-rotate {
+            transform: rotate(-2deg);
+        }
+        
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(255, 87, 23, 1);
+        }
+
+        .hard-shadow-hover:active {
+            box-shadow: 0px 0px 0px 0px rgba(255, 87, 23, 1);
+            transform: translate(4px, 4px);
+        }
+
+        .distress-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .card-skew {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-skew:hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-white">
+<div class="fixed inset-0 distress-overlay z-[100]"></div>
+<!-- Header / TopNavBar -->
 {{> menu id="Events"}}
-
-<div class="card mt-3">
-  <div class="card-header">
-    Wöchentliche Specials
-  </div>
-  <div class="card-body">
-    <table class="table table-bordered">
-      <thead>
-        <th scope="col">Montag</th>
-        <th scope="col">Dienstag</th>
-        <th scope="col">Mittwoch</th>
-        <th scope="col">Donnerstag</th>
-        <th scope="col">Freitag</th>
-        <th scope="col">Samstag</th>
-        <th scope="col">Sonntag</th>
-      </thead>
-      <tbody>
-        <td>Geschlossen</td>
-        <td>Special 1</td>
-        <td>Special 2</td>
-        <td>Special 3</td>
-        <td>Special 4</td>
-        <td>Special 5</td>
-        <td>Geschlossen</td>
-      </tbody>
-    </table>
-  </div>
+<main class="max-w-[1440px] mx-auto px-gutter py-stack-lg">
+<!-- Hero Summary -->
+<header class="mb-stack-lg border-l-8 border-secondary-container pl-6">
+<h1 class="font-display-lg text-display-lg uppercase leading-none mb-2">Events &amp; Specials</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant uppercase max-w-2xl">Regensburg Underground HQ. Wo Tradition auf Dreck trifft.</p>
+</header>
+<!-- Weekly Specials Section (Dominant Top Half) -->
+<section class="mb-24">
+<div class="flex items-end gap-4 mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase">Weekly Specials</h2>
+<span class="mb-3 h-1 flex-grow bg-outline-variant"></span>
 </div>
-
-<div class="card mt-3">
-  <div class="card-header">
-    Events
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Anstehende Events</h5>
-    <p>25.06 - Eröffnung</p>
-  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
+<!-- Montag (Small) -->
+<div class="lg:col-span-1 flex flex-col p-4 bg-surface-container-low border-2 border-outline-variant border-dashed opacity-40 grayscale">
+<span class="font-label-sm text-label-sm text-outline mb-2">MO</span>
+<h3 class="font-headline-md text-lg uppercase text-outline">Geschlossen</h3>
 </div>
+<!-- Dienstag (Large) -->
+<div class="lg:col-span-2 group relative flex flex-col p-6 bg-surface-container-high border-4 border-on-surface hard-shadow card-skew">
+<span class="font-label-md text-label-md text-secondary-container mb-2 font-bold">DIENSTAG</span>
+<h3 class="font-headline-lg text-2xl uppercase mb-4 leading-tight">Draft Beer BOGO</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Zwei für eins auf alle Fassbiere. Den ganzen Abend.</p>
+<div class="mt-auto border-t border-outline-variant pt-2 flex justify-between items-center">
+<span class="font-label-sm uppercase text-xs">20:00 - OPEN</span>
+<span class="material-symbols-outlined text-secondary-container text-xl">sports_bar</span>
+</div>
+</div>
+<!-- Mittwoch (Large) -->
+<div class="lg:col-span-2 group relative flex flex-col p-6 bg-secondary-container text-on-secondary-container border-4 border-on-surface hard-shadow card-skew">
+<span class="font-label-md text-label-md text-on-secondary-container/60 mb-2 font-bold">MITTWOCH</span>
+<h3 class="font-headline-lg text-2xl uppercase mb-4 leading-tight">College Pong Tourney</h3>
+<p class="font-body-md text-sm text-on-secondary-container/80 mb-4">Echte Varsity Vibes. Melde dein Team an der Bar an.</p>
+<div class="mt-auto border-t border-on-secondary-container/20 pt-2 flex justify-between items-center">
+<span class="font-label-sm uppercase text-xs">ANMELDUNG 21:00</span>
+<span class="material-symbols-outlined text-xl">sports_esports</span>
+</div>
+</div>
+<!-- Donnerstag (Large) -->
+<div class="lg:col-span-2 group relative flex flex-col p-6 bg-surface-container-high border-4 border-on-surface hard-shadow card-skew">
+<span class="font-label-md text-label-md text-secondary-container mb-2 font-bold">DONNERSTAG</span>
+<h3 class="font-headline-lg text-2xl uppercase mb-4 leading-tight">Ladies Night Selection</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Special prices auf ausgewählte Cocktails &amp; Longdrinks.</p>
+<div class="mt-auto border-t border-outline-variant pt-2 flex justify-between items-center">
+<span class="font-label-sm uppercase text-xs">HAPPY HOUR 20-22</span>
+<span class="material-symbols-outlined text-secondary-container text-xl">local_bar</span>
+</div>
+</div>
+<!-- Freitag & Samstag (Large) -->
+<div class="lg:col-span-4 group relative flex flex-col p-6 bg-primary-container text-primary border-4 border-on-surface hard-shadow card-skew">
+<span class="font-label-md text-label-md text-primary/60 mb-2 font-bold">FR &amp; SA</span>
+<h3 class="font-headline-lg text-3xl uppercase mb-4 leading-tight">Underground Vibrations</h3>
+<p class="font-body-md text-sm text-primary/80 mb-4">Analog Vinyl, Bass &amp; die härtesten Drinks der Altstadt.</p>
+<div class="mt-auto border-t border-primary/20 pt-2 flex justify-between items-center">
+<span class="font-label-sm uppercase text-xs">FULL ENERGY</span>
+<span class="material-symbols-outlined text-xl">album</span>
+</div>
+</div>
+<!-- Sonntag (Small) -->
+<div class="lg:col-span-1 flex flex-col p-4 bg-surface-container-low border-2 border-outline-variant border-dashed opacity-40 grayscale">
+<span class="font-label-sm text-label-sm text-outline mb-2">SO</span>
+<h3 class="font-headline-md text-lg uppercase text-outline">Geschlossen</h3>
+</div>
+</div>
+</section>
+<!-- Lower Section Layout: Sidebar-style Events & CTA -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Besondere Events (Main content area in this view) -->
+<div class="lg:col-span-8">
+<h2 class="font-headline-lg text-3xl text-on-background uppercase mb-8 border-b-2 border-outline-variant pb-2">Besondere Events</h2>
+<div class="space-y-4">{{#each allevents}}
+<div class="flex justify-between items-center border-b border-outline-variant/20 py-4">
+<div class="flex gap-12 items-center">
+<div class="flex flex-col min-w-[80px]">
+<span class="font-bold text-secondary-container font-headline-md text-xl">{{datum}}</span>
+</div>
+<span class="font-headline-lg text-2xl uppercase leading-tight">{{name}}</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-xs uppercase border border-outline-variant/40 px-4 py-2 hover:bg-secondary-container hover:text-on-secondary-container transition-all font-bold tracking-widest font-label-md">Tickets</button>
+</div>
+</div>
+{{/each}}</div>
+</div>
+<!-- Sidebar Reservation CTA -->
+<aside class="lg:col-span-4">
+<div class="sticky top-24">
+<div class="bg-secondary-container p-8 border-4 border-on-surface hard-shadow sticker-rotate">
+<h3 class="font-headline-md text-2xl text-on-secondary-container uppercase mb-4">No Excuses.</h3>
+<p class="font-body-md text-on-secondary-container/90 mb-6 leading-snug">Sichere dir deinen Platz für das nächste Event im Frathouse Keller.</p>
+<button class="w-full bg-on-secondary-container text-secondary-container font-headline-md text-xl py-3 uppercase hover:scale-105 transition-transform">
+                            Tisch buchen
+                        </button>
+</div>
+<div class="mt-12 p-6 border-2 border-dashed border-outline-variant">
+<span class="font-label-sm text-on-surface-variant block mb-2">Location</span>
+<p class="font-body-md">Untergrund 1<br/>93047 Regensburg</p>
+<a class="inline-block mt-4 text-secondary underline font-label-md" href="#">Google Maps</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+{{> footer}}
+<script>
+        // Micro-interactions for cards and buttons
+        document.querySelectorAll('.card-skew').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'scale(1.2) rotate(-10deg)';
+                    icon.style.transition = 'transform 0.3s ease';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body></html>

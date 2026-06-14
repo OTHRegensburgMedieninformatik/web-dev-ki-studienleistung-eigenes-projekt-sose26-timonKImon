@@ -17,14 +17,14 @@ const resAnfragen = {
     },
 
     async acceptRes(id) {
-        const query = 'UPDATE table reservierung SET status = "angenommen" WHERE id = $1';
+        const query = "UPDATE reservierung SET status = 'angenommen' WHERE id = $1";
         const values = [id];
         try {
             await dataStoreClient.query(query, values);
-            logger.info("Accepting Reservation of: ", name);
+            logger.info("Accepting Reservation: ", id);
         }
         catch (e) {
-            logger.error("ERROR: couldnt delete item.", e);
+            logger.error("ERROR: couldnt accept reservation.", e);
         }
     },
 

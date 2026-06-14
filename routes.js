@@ -15,7 +15,6 @@ router.get("/karte", karte.index);
 router.get("/geheimeLoginseitederBar", users.index);
 router.get("/reservieren", reservieren.index);
 router.post("/reservieren/anfrage", reservieren.reservierung);
-router.post("/reservierung/:id/annehmen", reservieren.accRes);
 router.post("/userHub/111/authentication", users.authenticate);
 router.post("/userHub/111/registrieren", users.register); //registrieren sicherheitslücke, nur login zulassen
 
@@ -23,6 +22,9 @@ router.post("/userHub/111/registrieren", users.register); //registrieren sicherh
 router.get("/edit", auth.protected, edit.index);
 router.post("/edit/add", auth.protected, edit.addItem);
 router.post("/edit/delete", auth.protected, edit.deleteItem);
+router.post("/edit/addEv", auth.protected, edit.addEvent);
+router.post("/edit/deleteEv", auth.protected, edit.deleteEvent);
+router.post("/reservierung/:id/annehmen", reservieren.accRes);
 router.post("/logout", auth.protected, users.logout);
 
 module.exports = router;

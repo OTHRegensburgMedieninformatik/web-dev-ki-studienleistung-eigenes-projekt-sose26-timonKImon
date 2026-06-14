@@ -1,12 +1,243 @@
-{{> menu }}
+<!DOCTYPE html><html class="dark" lang="de"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{{title}} | FRATHOUSE UNDERGROUND</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#aec7f6",
+                        "on-surface": "#e5e2e1",
+                        "secondary": "#ffb59e",
+                        "outline": "#8e9099",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-container-highest": "#353534",
+                        "primary": "#aec7f6",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#521300",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-primary-container": "#708ab5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "on-tertiary-container": "#00989e",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#ff5717",
+                        "on-tertiary": "#003739",
+                        "inverse-primary": "#465f88",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-dim": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "tertiary": "#00dce5",
+                        "on-secondary": "#5e1700",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#002147",
+                        "on-surface-variant": "#c4c6cf",
+                        "tertiary-container": "#002628",
+                        "on-secondary-fixed": "#3a0b00",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary-fixed-variant": "#842500",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-error": "#690005",
+                        "outline-variant": "#44474e",
+                        "on-primary": "#143057"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "stack-sm": "8px",
+                        "gutter": "20px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["36px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .distress-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/scratched-metal.png");
+            pointer-events: none;
+            opacity: 0.05;
+        }
+        .shadow-hard {
+            box-shadow: 6px 6px 0px 0px #ff5717;
+        }
+        .shadow-hard-blue {
+            box-shadow: 6px 6px 0px 0px #aec7f6;
+        }
+        .shadow-hard-white {
+            box-shadow: 8px 8px 0px 0px #ffffff;
+        }
+        .neon-flicker {
+            animation: flicker 2s infinite alternate;
+        }
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.8; }
+        }
+        .text-shadow-deep {
+            text-shadow: 4px 4px 0px #ff5717, 8px 8px 0px #002147;
+        }
+        .varsity-pattern {
+            background-image: radial-gradient(#ff5717 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden dark">
+<div class="distress-overlay fixed inset-0 z-50"></div>
 
-<div class="card mt-3">
-  <div class="card-header">
-    {{title}}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Willkommen im Frathouse</h5>
-    <p class="card-text">todo: Events+Bearbeiten, Reservieren, Karte pdf, Stitch frontend</p>
-  </div>
+    {{> menu id='home'}}
+
+    <main class="min-h-screen pt-margin-mobile border-secondary-container"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section: Branded Grid Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b-4 border-secondary-container border-x-4 border-t-4">
+<!-- Left Panel: Huge Typography (Style from Screen 26) -->
+<div class="lg:col-span-8 p-margin-mobile md:p-margin-desktop flex flex-col justify-center border-r-0 lg:border-r-4 border-secondary-container relative overflow-hidden">
+<div class="varsity-pattern absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10 space-y-stack-md">
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-[0.3em] neon-flicker">Est. Underground</span>
+<h1 class="font-display-lg text-[60px] md:text-[120px] lg:text-[140px] leading-[0.9] uppercase italic text-shadow-deep">
+                        FRATHOUSE<br>
+<span class="text-primary">GOES</span><br>
+<span class="text-white">UNDERGROUND</span>
+</h1>
+<div class="flex flex-wrap gap-stack-md mt-stack-lg">
+<a class="bg-secondary-container text-on-secondary-container px-8 py-4 font-headline-md text-headline-md uppercase shadow-hard-white hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" href="#booking">
+                            Reservation
+                        </a>
+<a class="bg-primary text-on-primary px-8 py-4 font-headline-md text-headline-md uppercase shadow-hard-white hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" href="#menu">
+                            Drink Karte
+                        </a>
 </div>
+</div>
+</div>
+<!-- Right Panel: Varsity Grunge Badge & Atmosphere (Style from Screen 66) -->
+<div class="lg:col-span-4 bg-primary-container flex flex-col items-center justify-center p-margin-desktop relative">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+<!-- Varsity Badge -->
+<div class="relative z-10 bg-secondary-container p-10 border-8 border-white shadow-hard -rotate-6 hover:rotate-0 transition-transform duration-500 cursor-pointer group">
+<span class="font-display-lg text-[60px] md:text-[80px] text-white uppercase block leading-none group-hover:scale-110 transition-transform">VARSITY</span>
+<span class="font-display-lg text-[60px] md:text-[80px] text-white uppercase block leading-none group-hover:scale-110 transition-transform">GRUNGE</span>
+</div>
+<div class="mt-stack-lg grid grid-cols-1 gap-stack-md w-full max-w-[280px]">
+<div class="bg-surface-container-highest p-4 border-2 border-dashed border-primary rotate-2">
+<p class="font-label-sm text-label-sm uppercase text-primary mb-1">Status</p>
+<p class="font-headline-md text-headline-md text-white">RE-OPENING NOW</p>
+</div>
+<div class="bg-surface-container-highest p-4 border-2 border-dashed border-secondary-container -rotate-2">
+<p class="font-label-sm text-label-sm uppercase text-secondary mb-1">Atmosphere</p>
+<p class="font-headline-md text-headline-md text-white">NO PERFECTION</p>
+</div>
+</div>
+<div class="absolute top-8 right-8 bg-tertiary text-on-tertiary font-label-md px-4 py-2 rotate-12 neon-flicker">NEW LOCATION</div>
+</div>
+</section>
+<!-- Information & Events Grid (Combined USPs from 66 and Events from 26) -->
+<section class="bg-background py-margin-mobile md:py-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- USP Block 1 -->
+<div class="p-8 bg-surface-container-low border-t-8 border-secondary-container shadow-hard hover:-translate-y-2 transition-transform">
+<span class="material-symbols-outlined text-secondary-container text-5xl mb-stack-sm" style="font-variation-settings: &quot;FILL&quot; 1;">local_fire_department</span>
+<h3 class="font-display-lg text-headline-lg uppercase mb-4">DIVE BAR VIBES</h3>
+<p class="font-body-lg text-on-surface-variant">Schluss mit dem Glanz. Wir bringen den Dreck und die Seele zurück. Authentisch, laut und ungeschönt. Dein neues Wohnzimmer im Keller.</p>
+</div>
+<!-- USP Block 2 -->
+<div class="p-8 bg-surface-container-low border-t-8 border-primary shadow-hard hover:-translate-y-2 transition-transform">
+<span class="material-symbols-outlined text-primary text-5xl mb-stack-sm" style="font-variation-settings: &quot;FILL&quot; 1;">sports_kabaddi</span>
+<h3 class="font-display-lg text-headline-lg uppercase mb-4">BEER PONG</h3>
+<p class="font-body-lg text-on-surface-variant">Die legendären Turniere sind zurück. Fordere deine Freunde heraus oder nimm an unseren wöchentlichen Rivals teil.</p>
+</div>
+<!-- Upcoming Events (From Screen 26 style) -->
+<div class="p-8 bg-surface-container-highest border-t-8 border-tertiary shadow-hard flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-display-lg text-headline-lg uppercase">UPCOMING</h3>
+<span class="font-label-sm bg-tertiary text-on-tertiary px-2 py-1">LIT!</span>
+</div>
+<ul class="space-y-4 flex-grow">
+<li class="flex items-center gap-4 border-b border-outline-variant pb-2">
+<span class="font-label-md text-tertiary">FR 12.</span>
+<span class="font-headline-md uppercase text-white">Opening Night</span>
+</li>
+<li class="flex items-center gap-4 border-b border-outline-variant pb-2">
+<span class="font-label-md text-tertiary">SA 13.</span>
+<span class="font-headline-md uppercase text-white">Beer Pong Cup</span>
+</li>
+<li class="flex items-center gap-4 border-b border-outline-variant pb-2">
+<span class="font-label-md text-tertiary">MI 17.</span>
+<span class="font-headline-md uppercase text-white">College Night</span>
+</li>
+</ul>
+<a class="mt-6 text-tertiary font-label-md uppercase hover:underline flex items-center gap-2" href="#">
+                        Alle Events ansehen <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div></main>
+    {{> footer}}
+<script>
+        // Micro-interactions for hard shadow buttons
+        document.querySelectorAll('button, a[class*="shadow-hard"]').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'translate(4px, 4px)';
+                btn.style.boxShadow = 'none';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+                btn.style.boxShadow = '';
+            });
+        });
+    </script>
 
+
+</body></html>

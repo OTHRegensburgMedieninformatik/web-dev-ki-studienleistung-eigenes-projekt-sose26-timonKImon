@@ -1,21 +1,36 @@
-<form class="needs-validation" novalidate action="/reservieren/anfrage" method="POST">
-    <div class="row">
-        <div class="mb-3 col-4">
-            <label for="inputName" class="form-label">Name</label>
-            <input placeholder="Ihr Name" type="text" className="form-control" id="inputName" name="name">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputEmail" class="form-label">Email</label>
-            <input placeholder="bier@4.de" type="text" className="form-control" id="inputEmail" name="email">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputAnzPers" class="form-label">Anzahl Personen</label>
-            <input placeholder="400" type="number" className="form-control" id="inputAnzPers" name="anzpers">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputDatum" class="form-label">Datum</label>
-            <input placeholder="23.05.2030" type="date" className="form-control" id="inputDatum" name="datum">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Anfragen</button>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-8" id="reservationForm" action="/reservieren/anfrage" method="POST">
+<!-- Full Name -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="name">Dein Name</label>
+<input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all placeholder:text-outline/30 rounded-t-lg border-primary" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-base">
+    <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="email">E-Mail Adresse</label>
+    <input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all placeholder:text-outline/30 rounded-t-lg border-primary" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+
+<!-- Persons -->
+<div class="flex flex-col gap-base">
+    <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="anzpers">Anzahl Personen</label>
+    <input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all placeholder:text-outline/30 rounded-t-lg border-primary" id="anzpers" name="anzpers" placeholder="12" required="" type="number"/>
+</div>
+
+<!-- Date -->
+<div class="flex flex-col gap-base">
+    <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="datum">Datum</label>
+    <input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all rounded-t-lg border-primary" id="datum" name="datum" required="" type="date"/>
+</div>
+
+<!-- Submit -->
+<div class="md:col-span-2 pt-4">
+    <button class="w-full bg-secondary-container text-on-secondary-container font-headline-lg text-3xl uppercase py-6 rounded-lg hover:brightness-110 transition-all active:scale-[0.98] flex items-center justify-center gap-4 shadow-lg shadow-hard" type="submit">
+        TISCH ANFRAGEN <span class="material-symbols-outlined text-4xl">bolt</span>
+    </button>
+    <p class="text-center font-label-sm text-label-sm uppercase mt-6 text-on-surface-variant tracking-wider">
+        Wir antworten in der Regel innerhalb von 2 Stunden.
+    </p>
+</div>
 </form>
+
+

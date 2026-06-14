@@ -1,0 +1,18 @@
+{{>menu id="getränkekarte"}}
+
+<div class="border p-2 my-2">
+    <h3>Drinks & Food</h3>
+    <p>Es gibt folgendes:</p>
+</div>
+
+    {{#each sortedMenu}}
+    <div>
+        <h4>{{name}}:</h4>
+        {{#each item}}
+        <div class="border p-2 my-2">
+            <h5>{{item}}</h5>
+            <p>{{inhalt}}</p><h5>{{preis}}€</h5>
+        </div> 
+        {{/each}} 
+    </div>
+    {{/each}}
