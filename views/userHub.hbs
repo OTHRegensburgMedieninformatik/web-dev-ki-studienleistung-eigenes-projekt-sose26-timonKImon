@@ -1,14 +1,178 @@
-{{> menu }}
+<!DOCTYPE html>
 
-<div class="card mt-3">
-  <div class="card-header">
-    {{title}}
-  </div>
-  <div class="card-body">
-    {{> login}}
-  </div>
-  <div class="card-body">
-    {{> register}}
-  </div>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Frathouse | User Hub</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Anton (Varsity), Hanken Grotesk (Body), JetBrains Mono (Labels) -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#131313",
+                      "inverse-primary": "#465f88",
+                      "on-secondary-fixed-variant": "#842500",
+                      "on-secondary-fixed": "#3a0b00",
+                      "surface-tint": "#aec7f6",
+                      "secondary-fixed-dim": "#ffb59e",
+                      "on-surface": "#e5e2e1",
+                      "on-tertiary-container": "#00989e",
+                      "on-primary": "#143057",
+                      "on-error": "#690005",
+                      "inverse-surface": "#e5e2e1",
+                      "outline-variant": "#44474e",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-container": "#521300",
+                      "error": "#ffb4ab",
+                      "primary": "#aec7f6",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#002628",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#ffdbd0",
+                      "on-tertiary-fixed": "#002021",
+                      "background": "#131313",
+                      "surface-container-low": "#1c1b1b",
+                      "on-background": "#e5e2e1",
+                      "primary-container": "#002147",
+                      "secondary-container": "#ff5717",
+                      "on-surface-variant": "#c4c6cf",
+                      "tertiary-fixed": "#63f7ff",
+                      "surface-container": "#201f1f",
+                      "on-primary-container": "#708ab5",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline": "#8e9099",
+                      "surface-bright": "#3a3939",
+                      "primary-fixed-dim": "#aec7f6",
+                      "primary-fixed": "#d6e3ff",
+                      "on-tertiary": "#003739",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#004f53",
+                      "inverse-on-surface": "#313030",
+                      "surface-container-highest": "#353534",
+                      "on-secondary": "#5e1700",
+                      "tertiary-fixed-dim": "#00dce5",
+                      "tertiary": "#00dce5",
+                      "secondary": "#ffb59e",
+                      "on-primary-fixed": "#001b3d",
+                      "surface-variant": "#353534"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "24px",
+                      "base": "4px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "48px",
+                      "gutter": "20px",
+                      "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Anton"],
+                      "headline-lg": ["Anton"],
+                      "label-md": ["JetBrains Mono"],
+                      "body-md": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-sm": ["JetBrains Mono"],
+                      "display-lg": ["Anton"],
+                      "headline-lg-mobile": ["Anton"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["36px", {"lineHeight": "40px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        
+        .varsity-button {
+            transition: all 0.15s ease-in-out;
+        }
+        
+        .varsity-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: none !important;
+        }
+
+        .scratched-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/scratched-metal.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .input-varsity:focus {
+            outline: none;
+            border-color: #ff5717;
+            box-shadow: 0 0 12px rgba(255, 87, 23, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden font-body-md selection:bg-secondary-container selection:text-white">
+<!-- Distress Overlay -->
+<div class="fixed inset-0 scratched-overlay z-50"></div>
+<!-- Background Pattern Effect -->
+<div class="fixed inset-0 opacity-10 pointer-events-none z-0">
+<div class="absolute inset-0" style="background-image: radial-gradient(#ff5717 1px, transparent 1px); background-size: 32px 32px;"></div>
 </div>
-
+<!-- Header Section -->
+<header class="relative z-10 w-full py-stack-md flex justify-center items-center">
+<div class="flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg uppercase tracking-tighter transform text-primary">
+                FRATHOUSE
+            </h1>
+<p class="font-label-md text-label-md text-primary mt-base tracking-widest uppercase bg-surface-container px-4 py-1 border-2 border-primary transform rotate-1 shadow-[4px_4px_0px_0px_#aec7f6]">
+                Goes Underground
+            </p>
+</div>
+</header>
+<main class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-gutter">
+<!-- Login Section -->
+    {{> login}}
+<!-- Registration Section -->
+    {{> register}}
+</main>
+   
+<!-- Scripts 
+<script>
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalText = btn.innerText;
+                btn.innerText = 'PROCESSING...';
+                btn.classList.add('opacity-50');
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('opacity-50');
+                    alert('Request sent to HQ. Stay tuned.');
+                }, 1000);
+            });
+        });
+    </script>
+-->
+    {{> footer}}
+</body></html>

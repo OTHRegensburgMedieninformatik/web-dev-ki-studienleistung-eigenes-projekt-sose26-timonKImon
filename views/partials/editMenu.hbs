@@ -1,28 +1,32 @@
-<form action="/edit/add" method="POST">
-    <div class="row">
-        <div class="mb-3 col-4">
-            <label for="inputName" class="form-label">Name</label>
-            <input placeholder="Touchdown" type="text" className="form-control" id="inputName" name="name">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputInhalt" class="form-label">Inhalt</label>
-            <input placeholder="Vodka, Apricot Brandy ..." type="text" className="form-control" id="inputInhalt" name="inhalt">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputPreis" class="form-label">Preis</label>
-            <input placeholder="9.00" type="number" className="form-control" id="inputPreis" name="preis">
-        </div>
-        <div class="col-md-3">
-        <label class="input-group-text" for="inputGroupSelect01">Kategorie</label>
-        <select class="form-select" id="inputGroupSelectKategorie" name="kategorie">
-            <option selected>auswählen...</option>
-            <option value="Cocktails" name="kategorie">Cocktails</option>
-            <option value="Longdrinks" name="kategorie">Longdrinks</option>
-            <option value="Bier" name="kategorie">Bier</option>
-            <option value="Shots" name="kategorie">Shots</option>
-            <option value="Alkoholfrei" name="kategorie">Alkoholfrei</option>
-        </select>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+<div class="form-card bg-surface-container p-6">
+<h3 class="font-headline-md text-primary-container uppercase mb-4 border-b-2 border-primary-container">Neues Item hinzufügen</h3>
+<form action="/edit/add" class="space-y-4" method="POST">
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputName">Name</label>
+<input class="w-full p-2" id="inputName" name="name" placeholder="Touchdown" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputInhalt">Inhalt</label>
+<input class="w-full p-2" id="inputInhalt" name="inhalt" placeholder="Vodka, Apricot Brandy ..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputPreis">Preis (€)</label>
+<input class="w-full p-2" id="inputPreis" name="preis" placeholder="9.00" step="0.01" type="number"/>
+</div>
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputGroupSelectKategorie">Kategorie</label>
+<select class="w-full p-2" id="inputGroupSelectKategorie" name="kategorie">
+<option selected="">auswählen...</option>
+<option value="Cocktails">Cocktails</option>
+<option value="Longdrinks">Longdrinks</option>
+<option value="Bier">Bier</option>
+<option value="Shots">Shots</option>
+<option value="Alkoholfrei">Alkoholfrei</option>
+<option value="Hungrig?">Essen</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary-container text-primary font-headline-md uppercase py-2 hover:bg-on-primary-fixed-variant transition-colors" type="submit">Hinzufügen</button>
 </form>
+</div>

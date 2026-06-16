@@ -1,60 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ADMIN PANEL | FRATHOUSE REGENSBURG</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#c4c6cf",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary": "#003739",
+                    "surface-variant": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#63f7ff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary": "#aec7f6",
+                    "tertiary-container": "#002628",
+                    "error-container": "#93000a",
+                    "outline-variant": "#44474e",
+                    "on-secondary-fixed-variant": "#842500",
+                    "inverse-surface": "#e5e2e1",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#521300",
+                    "surface-tint": "#aec7f6",
+                    "primary-fixed": "#d6e3ff",
+                    "on-primary": "#143057",
+                    "on-tertiary-container": "#00989e",
+                    "on-secondary-fixed": "#3a0b00",
+                    "outline": "#8e9099",
+                    "on-primary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#00dce5",
+                    "surface-bright": "#3a3939",
+                    "on-secondary": "#5e1700",
+                    "error": "#ffb4ab",
+                    "surface": "#131313",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "on-tertiary-fixed-variant": "#004f53",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "secondary-container": "#ff5717",
+                    "primary-container": "#002147",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353534",
+                    "inverse-primary": "#465f88",
+                    "secondary": "#ffb59e",
+                    "tertiary": "#00dce5",
+                    "surface-dim": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary-fixed-dim": "#aec7f6",
+                    "on-primary-container": "#708ab5",
+                    "on-tertiary-fixed": "#002021",
+                    "surface-container-low": "#1c1b1b",
+                    "background": "#131313",
+                    "surface-container": "#201f1f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "base": "4px",
+                    "margin-desktop": "48px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "48px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Anton"],
+                    "label-md": ["JetBrains Mono"],
+                    "headline-md": ["Anton"],
+                    "display-lg": ["Anton"],
+                    "headline-lg": ["Anton"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scratched-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .admin-sidebar {
+            height: calc(100vh - 68px);
+        }
+        .form-card {
+            border: 4px solid #002147;
+            box-shadow: 6px 6px 0px 0px #ff5717;
+        }
+        .form-card-secondary {
+            border: 4px solid #ff5717;
+            box-shadow: 6px 6px 0px 0px #002147;
+        }
+        .nav-link-active {
+            background-color: #ff5717;
+            color: #002147;
+        }
+        input, select, textarea {
+            background-color: #1c1b1b !important;
+            border: 2px solid #44474e !important;
+            color: #e5e2e1 !important;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #aec7f6 !important;
+            ring: 0 !important;
+            outline: none !important;
+        }
+    </style>
+</head>
 {{> menu id="edit"}}
-
-<div class="border p-2 my-2">
-  <h3>Karte bearbeiten - hinzufügen:</h3>
-  <p>Inhalt (optional)
-    <br>
-    Kategorie: Bier, Cocktails, Longdrinks, Shots,  Alkoholfrei
-  </p>
-  {{> editMenu}}
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<div class="scratched-overlay">
 </div>
-
-<div class="border p-2 my-2">
-  <h3>Karte bearbeiten - löschen:</h3>
-  <p>
-  </p>
-  {{> deleteMenu}}
+<div class="flex">
+<!-- Sidebar -->
+<!-- Main Content -->
+<main class="flex-1 p-gutter max-w-5xl mx-auto space-y-stack-lg">
+<!-- Section: Menu -->
+<section class="scroll-mt-24 space-y-stack-md" id="menu">
+<div class="flex items-baseline gap-4 mb-4">
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Speisekarte</h2>
+<span class="font-label-md text-outline uppercase">Verwalten</span>
 </div>
-
-<div class="border p-2 my-2">
-  <h3>Reservierungen annehmen</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Datum</th>
-        <th>Status</th>
-        <th>Aktion</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each reservierungen}}
-      <tr>
-        <td>{{this.name}}</td>
-        <td>{{this.datum}}</td>
-        <td>{{this.status}}</td>
-        <td>
-          {{#if (eq this.status "offen")}}
-        <form action="/reservierung/{{this.id}}/annehmen" method="POST">
-          <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit">Annehmen</button>
-        </form>
-          {{/if}}
-        </td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Add Item -->
+    {{> editMenu}}
+<!-- Delete/Edit List -->
+    {{> deleteMenu}}
+</section>
+<!-- Section: Events -->
+<section class="scroll-mt-24 space-y-stack-md" id="events">
+<div class="flex items-baseline gap-4 mb-4">
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Events</h2>
+<span class="font-label-md text-outline uppercase">Planung</span>
 </div>
+    {{> addEvents}}
 
-<div class="border p-2 my-2">
-  <h3>Event hinzufügen</h3>
-  {{> addEvents}}
+    {{> deleteEvents}}
+</div></div>
+</section>
+<!-- Section: Reservations -->
+<section class="scroll-mt-24 space-y-stack-md" id="reservations">
+<div class="flex items-baseline gap-4 mb-4">
+<h2 class="font-display-lg text-display-lg text-primary uppercase">Reservierungen</h2>
+<span class="font-label-md text-outline uppercase">Gästeliste</span>
 </div>
+<div class="form-card bg-surface-container overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary-container text-primary font-label-md uppercase">
+<th class="p-4 border-r border-primary/20">Name</th>
+<th class="p-4 border-r border-primary/20">Datum</th>
+<th class="p-4 border-r border-primary/20">Uhrzeit</th>
+<th class="p-4 border-r border-primary/20">Anzahl Personen</th>
+<th class="p-4 border-r border-primary/20">Status</th>
+<th class="p-4 text-center">Aktion</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+{{#each reservierungen}}
+<tr class="border-b border-outline/10 hover:bg-surface-container-high transition-colors">
+<td class="p-4">{{this.name}}</td>
+<td class="p-4">{{this.datum}}</td>
+<td class="p-4">{{this.uhrzeit}}</td>
+<td class="p-4">{{this.anzpers}}</td>
+<td class="p-4">{{this.status}}</td>
+<td class="p-4">
+    {{#if (eq this.status "offen")}}
+    <form action="/reservierung/{{this.id}}/annehmen" method="POST">
+        <input name="id" type="hidden" value="{{this.id}}"/>
+        <button class="bg-tertiary text-on-tertiary px-3 py-1 font-label-sm uppercase" type="submit">Annehmen</button>
+    </form>
+    {{/if}}
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+</div>
+<script>
+        // Simple scroll spy & active link update
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.admin-sidebar a');
 
-<div class="border p-2 my-2">
-  <h3>Event löschen</h3>
-  <p>
-  </p>
-  {{> deleteEvents}}
-</div>
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active', 'text-primary');
+                link.classList.add('text-on-surface');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('nav-link-active', 'text-primary');
+                    link.classList.remove('text-on-surface');
+                }
+            });
+        });
+
+        // Click handler for smooth scroll
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    {{> footer}}
+</body></html>

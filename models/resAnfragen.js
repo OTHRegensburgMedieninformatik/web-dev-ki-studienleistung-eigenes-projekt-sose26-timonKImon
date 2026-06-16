@@ -5,8 +5,8 @@ const dataStoreClient = dataStore.getdataStore();
 const resAnfragen = {
     
     async addRes(newRes) {
-        const query = 'INSERT into reservierung (NAME, EMAIL, ANZPERS, DATUM) VALUES ($1, $2, $3, $4)';
-        const values = [newRes.name, newRes.email, newRes.anzpers, newRes.datum];
+        const query = 'INSERT into reservierung (NAME, EMAIL, ANZPERS, DATUM, UHRZEIT) VALUES ($1, $2, $3, $4, $5)';
+        const values = [newRes.name, newRes.email, newRes.anzpers, newRes.datum, newRes.uhrzeit];
         try {
             await dataStoreClient.query(query, values);
             logger.info("New Reservation added");
@@ -29,7 +29,7 @@ const resAnfragen = {
     },
 
     async getreservierungen() {
-        const query = "SELECT id, name, email, anzpers, TO_CHAR(datum, 'DD.MM.YYYY') AS datum, status from reservierung";
+        const query = "SELECT id, name, email, anzpers, TO_CHAR(datum, 'DD.MM.YYYY') AS datum, TO_CHAR(uhrzeit, 'HH24.MI') AS uhrzeit, status from reservierung ORDER BY CASE status WHEN 'offen' THEN 1, WHEN 'angenommen' THEN 2, ELSE 3 END, datum ASC";
         try {
             const result = await dataStoreClient.query(query);
             logger.info("Getting reservierungen");

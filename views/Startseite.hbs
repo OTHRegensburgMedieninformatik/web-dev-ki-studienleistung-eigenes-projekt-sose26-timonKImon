@@ -133,11 +133,9 @@
         }
     </style>
 </head>
+{{> menu id='home'}}
 <body class="bg-background text-on-background font-body-md overflow-x-hidden dark">
 <div class="distress-overlay fixed inset-0 z-50"></div>
-
-    {{> menu id='home'}}
-
     <main class="min-h-screen pt-margin-mobile border-secondary-container"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
 <!-- Hero Section: Branded Grid Layout -->
 <section class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b-4 border-secondary-container border-x-4 border-t-4">
@@ -224,7 +222,6 @@
 </div>
 </section>
 </div></main>
-    {{> footer}}
 <script>
         // Micro-interactions for hard shadow buttons
         document.querySelectorAll('button, a[class*="shadow-hard"]').forEach(btn => {
@@ -239,5 +236,5 @@
         });
     </script>
 
-
+    {{> footer}}
 </body></html>

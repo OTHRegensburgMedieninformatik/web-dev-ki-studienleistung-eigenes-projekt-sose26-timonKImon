@@ -1,9 +1,9 @@
-<form action="/edit/delete" method="POST">
-    <div class="row">
-        <div class="mb-3 col-4">
-            <label for="inputName" class="form-label">Name</label>
-            <input placeholder="Touchdown" type="text" className="form-control" id="inputName" name="delID">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Löschen</button>
-</form>
+<div class="form-card-secondary bg-surface-container-high p-6"><h3 class="font-headline-md text-secondary-container uppercase mb-4 border-b-2 border-secondary-container">Karte bearbeiten - löschen</h3>
+<form action="/edit/delete" class="space-y-4" method="POST">
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputDelName">Name des Artikels zum Löschen</label>
+<input class="w-full p-2" id="inputDelName" name="delID" placeholder="Touchdown" type="text"/>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-headline-md uppercase py-2 hover:opacity-90 transition-opacity" type="submit">Löschen</button>
+</form></div>
+</div>

@@ -1,4 +1,4 @@
-<form class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-8" id="reservationForm" action="/reservieren/anfrage" method="POST">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-8" id="reservationForm">
 <!-- Full Name -->
 <div class="flex flex-col gap-base">
 <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="name">Dein Name</label>
@@ -20,6 +20,12 @@
 <div class="flex flex-col gap-base">
     <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="datum">Datum</label>
     <input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all rounded-t-lg border-primary" id="datum" name="datum" required="" type="date"/>
+</div>
+
+<!-- Time -->
+<div class="flex flex-col gap-base">
+    <label class="font-label-md text-label-md uppercase tracking-widest text-secondary-container" for="uhrzeit">Uhrzeit</label>
+    <input class="bg-surface-dim border-b-2 border-outline-variant p-3 font-body-lg text-on-surface focus:border-secondary-container focus:ring-0 transition-all rounded-t-lg border-primary" id="uhrzeit" name="uhrzeit" required="" type="time"/>
 </div>
 
 <!-- Submit -->

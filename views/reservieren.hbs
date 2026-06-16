@@ -140,9 +140,8 @@
 </div>
 </div>
 </main>
-{{> footer}}
 <script>
-    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    document.getElementById('reservationForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const submitBtn = e.target.querySelector('button[type="submit"]');
         const originalContent = submitBtn.innerHTML;
@@ -150,19 +149,27 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> VERARBEITE...';
         
+        await Promise.all([
+            fetch('/reservieren/anfrage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            }),
+            new Promise(resolve => setTimeout(resolve, 1500))
+        ]);
+
+        submitBtn.classList.remove('bg-secondary-container');
+        submitBtn.classList.add('bg-tertiary', 'text-on-tertiary');
+        submitBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ANFRAGE GESENDET!';
+        
         setTimeout(() => {
-            submitBtn.classList.remove('bg-secondary-container');
-            submitBtn.classList.add('bg-tertiary', 'text-on-tertiary');
-            submitBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ANFRAGE GESENDET!';
-            
-            setTimeout(() => {
-                submitBtn.classList.add('bg-secondary-container');
-                submitBtn.classList.remove('bg-tertiary', 'text-on-tertiary');
-                submitBtn.innerHTML = originalContent;
-                submitBtn.disabled = false;
-                e.target.reset();
-            }, 3000);
-        }, 1500);
+            submitBtn.classList.add('bg-secondary-container');
+            submitBtn.classList.remove('bg-tertiary', 'text-on-tertiary');
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            e.target.reset();
+        }, 3000);
     });
 </script>
+{{> footer}}
 </body></html>

@@ -16,10 +16,11 @@ const reservieren = {
             email: request.body.email,
             anzpers: request.body.anzpers,
             datum: request.body.datum,
+            uhrzeit: request.body.uhrzeit
         };
     logger.debug("New Reservation :", newRes)
     await resAnfragen.addRes(newRes);
-    response.redirect("/reservieren");
+    response.json({ success: true });
     },
 
     async accRes (request, response) {

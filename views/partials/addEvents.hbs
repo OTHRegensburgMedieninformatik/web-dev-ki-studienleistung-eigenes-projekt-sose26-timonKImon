@@ -1,13 +1,15 @@
-<form action="/edit/addEv" method="POST">
-    <div class="row">
-        <div class="mb-3 col-4">
-            <label for="inputName" class="form-label">Name</label>
-            <input placeholder="Bierpongtunier" type="text" className="form-control" id="inputName" name="name">
-        </div>
-        <div class="mb-3 col-4">
-            <label for="inputInhalt" class="form-label">Datum</label>
-            <input placeholder="25.01.2031" type="date" className="form-control" id="inputDatum" name="datum">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+<div class="form-card bg-surface-container p-6"><div class="grid md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-headline-md text-primary-container uppercase mb-4 border-b-2 border-primary-container">Event hinzufügen</h3>
+<form action="/edit/addEv" class="space-y-4" method="POST">
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputEvName">Name</label>
+<input class="w-full p-2" id="inputEvName" name="name" placeholder="Bierpongtunier" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputEvDatum">Datum</label>
+<input class="w-full p-2" id="inputEvDatum" name="datum" type="date"/>
+</div>
+<button class="w-full bg-primary-container text-primary font-headline-md uppercase py-2 hover:bg-on-primary-fixed-variant transition-colors" type="submit">Hinzufügen</button>
 </form>
+</div>

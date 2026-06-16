@@ -1,9 +1,10 @@
-<form action="/edit/deleteEv" method="POST">
-    <div class="row">
-        <div class="mb-3 col-4">
-            <label for="inputName" class="form-label">Name</label>
-            <input placeholder="Bierpongtunier" type="text" className="form-control" id="inputName" name="delEvent">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Löschen</button>
+<div>
+<h3 class="font-headline-md text-secondary-container uppercase mb-4 border-b-2 border-secondary-container">Event löschen</h3>
+<form action="/edit/deleteEv" class="space-y-4" method="POST">
+<div>
+<label class="block font-label-sm text-outline uppercase mb-1" for="inputDelEvName">Name</label>
+<input class="w-full p-2" id="inputDelEvName" name="delEvent" placeholder="Bierpongtunier" type="text"/>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-headline-md uppercase py-2 hover:opacity-90 transition-opacity" type="submit">Löschen</button>
 </form>
+</div>
