@@ -33,7 +33,7 @@ const resAnfragen = {
         try {
             const result = await dataStoreClient.query(query);
             logger.info("Getting reservierungen");
-            console.log("Res", result);
+            //console.log("Res", result);
             return result.rows;
         }
         catch (e) {
