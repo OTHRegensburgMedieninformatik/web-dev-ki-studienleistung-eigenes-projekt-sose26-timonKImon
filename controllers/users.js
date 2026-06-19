@@ -11,7 +11,6 @@ const users = {
     },
     
     async authenticate (request, response) {
-        console.log(request.body.username, request.body.passwort);
         let user = await userHub.authenticateUser(request.body.username, request.body.passwort);
         if (user) {
             request.session.user = user.id;
