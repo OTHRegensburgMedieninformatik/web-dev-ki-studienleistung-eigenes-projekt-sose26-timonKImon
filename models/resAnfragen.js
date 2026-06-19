@@ -29,10 +29,11 @@ const resAnfragen = {
     },
 
     async getreservierungen() {
-        const query = "SELECT id, name, email, anzpers, TO_CHAR(datum, 'DD.MM.YYYY') AS datum, TO_CHAR(uhrzeit, 'HH24.MI') AS uhrzeit, status from reservierung ORDER BY CASE status WHEN 'offen' THEN 1, WHEN 'angenommen' THEN 2, ELSE 3 END, datum ASC";
+        const query = "SELECT id, name, email, anzpers, TO_CHAR(datum, 'DD.MM.YYYY') AS datum, TO_CHAR(uhrzeit, 'HH24.MI') AS uhrzeit, status from reservierung ORDER BY CASE status WHEN 'offen' THEN 1 WHEN 'angenommen' THEN 2 ELSE 3 END, datum ASC";
         try {
             const result = await dataStoreClient.query(query);
             logger.info("Getting reservierungen");
+            console.log("Res", result);
             return result.rows;
         }
         catch (e) {
